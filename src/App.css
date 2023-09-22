@@ -8,7 +8,7 @@
 .colours {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin-top: 40px;
+
   /* border: solid 1px #ccc; */
   max-width: 960px;
   width: 85vw;
@@ -36,6 +36,8 @@ form {
   align-items: stretch;
   flex-wrap: wrap;
   gap: 16px;
+  /* margin-bottom: 40px; */
+  border: #d1d5db 1px solid;
 }
 
 .picker-input {
@@ -79,4 +81,25 @@ select {
 
 select option {
   background-color: #3d4b60;
+}
+
+.spacer {
+  /* border: 1px solid #d1d5db; */
+  /* center vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotate 1s linear infinite;
 }

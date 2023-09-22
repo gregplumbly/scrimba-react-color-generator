@@ -63,7 +63,9 @@ function App() {
         <button className="btn-get-colours">Get colour scheme</button>
       </form>
 
-      {loading && <Loader size={48} fill="red" />}
+      <div className="spacer" style={{ height: '48px' }}>
+        {loading ? <Loader className="rotating" size={32} fill="red" /> : null}
+      </div>
 
       <div className="colours">
         {colours.map((colour, index) => (
