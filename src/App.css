@@ -37,7 +37,7 @@ form {
   flex-wrap: wrap;
   gap: 16px;
   /* margin-bottom: 40px; */
-  border: #d1d5db 1px solid;
+  /* border: #d1d5db 1px solid; */
 }
 
 .picker-input {
