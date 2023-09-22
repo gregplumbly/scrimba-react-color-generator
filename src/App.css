@@ -8,13 +8,29 @@
 .colours {
   display: flex;
   flex-direction: row;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   margin-top: 40px;
-  border: solid 1px #ccc;
-  width: 80vw;
+  /* border: solid 1px #ccc; */
+  max-width: 1200px;
+  width: 85vw;
 }
 
 .colourDiv {
   width: 20%;
   height: 500px;
+}
+
+.hexes {
+  display: flex;
+  flex-direction: row;
+  background-color: #1f2937;
+}
+
+.hexDiv {
+  width: 20%;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

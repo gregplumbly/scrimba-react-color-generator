@@ -2,6 +2,10 @@ import { useState } from 'react';
 
 import './App.css';
 
+// TODO hook up the select form to the API
+// TODO style the select form and button
+// TODO display the hex codes for each colour
+
 function App() {
   const [colours, setColours] = useState([
     '#f55a5a',
@@ -62,6 +66,14 @@ function App() {
             className="colourDiv"
             style={{ backgroundColor: colour }}
           ></div>
+        ))}
+      </div>
+
+      <div className="hexes">
+        {colours.map((colour, index) => (
+          <div key={index} className="hexDiv">
+            {colour}
+          </div>
         ))}
       </div>
     </div>
