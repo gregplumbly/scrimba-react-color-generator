@@ -1,10 +1,6 @@
 import { useState } from 'react';
-
+import { Loader } from 'lucide-react';
 import './App.css';
-
-// TODO hook up the select form to the API
-// TODO style the select form and button
-// TODO display the hex codes for each colour
 
 function App() {
   const [colours, setColours] = useState([
@@ -15,13 +11,15 @@ function App() {
     '#a626d3',
   ]);
   const [seedColour, setSeedColour] = useState('#ff0000');
-  const [selectedOption, setSelectedOption] = useState('monochrome');
+  const [selectedOption, setSelectedOption] = useState('select');
+  const [loading, setLoading] = useState(false);
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
   const requestColours = async () => {
+    setLoading(true);
     let formattedSeedColour = seedColour.substring(1);
     const res = await fetch(
       `https://www.thecolorapi.com/scheme?hex=${formattedSeedColour}&mode=${selectedOption}&count=5`,
@@ -29,6 +27,7 @@ function App() {
     const json = await res.json();
     const newColours = json.colors.map((colorObj) => colorObj.hex.value);
     setColours(newColours);
+    setLoading(false);
   };
 
   return (
@@ -63,6 +62,8 @@ function App() {
         </select>
         <button className="btn-get-colours">Get colour scheme</button>
       </form>
+
+      {loading && <Loader size={48} fill="red" />}
 
       <div className="colours">
         {colours.map((colour, index) => (
