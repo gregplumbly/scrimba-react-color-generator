@@ -10,9 +10,11 @@
   flex-direction: row;
   border: 1px solid #ccc;
   margin-top: 40px;
+  border: solid 1px #ccc;
+  width: 80vw;
 }
 
 .colourDiv {
-  width: 200px;
+  width: 20%;
   height: 500px;
 }
