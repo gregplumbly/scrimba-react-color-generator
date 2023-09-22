@@ -15,8 +15,12 @@
   width: 85vw;
 }
 
-.colourDiv {
+.colourDiv,
+.hexDiv {
   width: 20%;
+}
+
+.colourDiv {
   height: 500px;
 }
 
@@ -33,4 +37,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: solid 1px #ccc;
+}
+
+.picker-input {
+  width: 75px;
+  height: 50px;
 }

@@ -8,14 +8,14 @@ import './App.css';
 
 function App() {
   const [colours, setColours] = useState([
-    '#f55a5a',
+    '#ec0606',
     '#2b283a',
     '#fbf3ab',
     '#aad1b6',
     '#a626d3',
   ]);
-  const [seedColour, setSeedColour] = useState('e66465');
-  const [selectedOption, setSelectedOption] = useState('');
+  const [seedColour, setSeedColour] = useState('#ff0000');
+  const [selectedOption, setSelectedOption] = useState('monochrome');
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -24,7 +24,7 @@ function App() {
   const requestColours = async () => {
     let formattedSeedColour = seedColour.substring(1);
     const res = await fetch(
-      `https://www.thecolorapi.com/scheme?hex=${formattedSeedColour}&mode=analogic&count=5`,
+      `https://www.thecolorapi.com/scheme?hex=${formattedSeedColour}&mode=${selectedOption}&count=5`,
     );
     const json = await res.json();
     const newColours = json.colors.map((colorObj) => colorObj.hex.value);
@@ -51,10 +51,11 @@ function App() {
           <option value="monochrome">Monochrome</option>
           <option value="monochrome-dark">Monochrome-dark</option>
           <option value="monochrome-light">Monochrome-light</option>
-          <option value="option4">Option 4</option>
-          <option value="option5">Option 5</option>
-          <option value="option6">Option 6</option>
-          <option value="option7">Option 7</option>
+          <option value="analogic">analogic</option>
+          <option value="complement">complement</option>
+          <option value="analogic-complement">analogic-complement</option>
+          <option value="triad">triad</option>
+          <option value="quad">quad</option>
         </select>
         <button>Get colour scheme</button>
       </form>
