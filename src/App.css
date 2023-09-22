@@ -1,0 +1,18 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.colours {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+.colourDiv {
+  width: 200px;
+  height: 500px;
+}
