@@ -46,18 +46,22 @@ function App() {
           value={seedColour}
           onChange={(e) => setSeedColour(e.target.value)}
         />
-        <select value={selectedOption} onChange={handleSelectChange}>
+        <select
+          value={selectedOption}
+          onChange={handleSelectChange}
+          className="select-theme"
+        >
           <option value="">Select...</option>
           <option value="monochrome">Monochrome</option>
           <option value="monochrome-dark">Monochrome-dark</option>
           <option value="monochrome-light">Monochrome-light</option>
-          <option value="analogic">analogic</option>
-          <option value="complement">complement</option>
-          <option value="analogic-complement">analogic-complement</option>
-          <option value="triad">triad</option>
-          <option value="quad">quad</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic-complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
         </select>
-        <button>Get colour scheme</button>
+        <button className="btn-get-colours">Get colour scheme</button>
       </form>
 
       <div className="colours">
@@ -68,9 +72,7 @@ function App() {
             style={{ backgroundColor: colour }}
           ></div>
         ))}
-      </div>
 
-      <div className="hexes">
         {colours.map((colour, index) => (
           <div key={index} className="hexDiv">
             {colour}
